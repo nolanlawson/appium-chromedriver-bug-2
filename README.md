@@ -9,7 +9,7 @@ Steps to reproduce
 Make sure an Android device is connected via USB. Then do:
 
 ```bash
-git clone git@github.com:nolanlawson/appium-android-demo.git
+git clone https://github.com/nolanlawson/appium-android-demo.git
 cd appium-android-demo
 ./gradlew assembleDebug
 cd appium
