@@ -7,12 +7,7 @@ function test(browser, driver) {
     .sleep(5000)
     .elementById('android:id/button1')
     .click()
-    .sleep(10000)
-    .elementById(packageName + ':id/web_view').should.eventually.exist
-    .sleep(5000)
-    .elementById(packageName + ':id/web_view')
-    .click()
-    .sleep(5000)
+    .sleep(15000)
     .contexts()
     .then(function (ctxs) {
       console.log(ctxs);
@@ -23,7 +18,7 @@ function test(browser, driver) {
     })
     .elementByCssSelector('.sqs-title-editable')
     .sendKeys('yo I am totally entering some text')
-    .sleep(5000)
+    .sleep(10000)
     .contexts()
     .then(function (ctxs) {
       return ctxs.filter(function (ctx) {
