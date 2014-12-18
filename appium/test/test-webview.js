@@ -21,9 +21,10 @@ function test(browser, driver) {
     .sleep(10000)
     .contexts()
     .then(function (ctxs) {
-      return ctxs.filter(function (ctx) {
+      var newContext = ctxs.filter(function (ctx) {
         return ctx.indexOf('NATIVE') !== -1;
       })[0];
+      return driver.context(newContext);
     })
     ;
 }
