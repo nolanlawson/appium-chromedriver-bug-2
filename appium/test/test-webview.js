@@ -7,9 +7,12 @@ function test(browser, driver) {
     .sleep(5000)
     .elementById('android:id/button1')
     .click()
-    .sleep(20000)
-    //.elementById(packageName + ':id/web_view_holder').should.eventually.exist
-    //.sleep(5000)
+    .sleep(10000)
+    .elementById(packageName + ':id/web_view').should.eventually.exist
+    .sleep(5000)
+    .elementById(packageName + ':id/web_view')
+    .click()
+    .sleep(5000)
     .contexts()
     .then(function (ctxs) {
       console.log(ctxs);
