@@ -5,6 +5,9 @@ var packageName = 'webview.com.example.nlawson.webview';
 function test(browser, driver) {
   return browser
     .sleep(5000)
+    .elementById('android:id/button1')
+    .click()
+    .sleep(7000)
     .contexts()
     .then(function (ctxs) {
       console.log(ctxs);
@@ -13,7 +16,7 @@ function test(browser, driver) {
       })[0];
       return driver.context(newContext);
     })
-    .elementByCssSelector('.my-text-area')
+    .elementByCssSelector('.sqs-title-editable')
     .sendKeys('yo I am totally entering some text')
     .sleep(5000)
     .contexts()

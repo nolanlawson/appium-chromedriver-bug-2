@@ -1,11 +1,14 @@
 package webview.com.example.nlawson.webview;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
+import android.widget.Button;
 
 
 public class MyActivity extends Activity {
@@ -15,30 +18,15 @@ public class MyActivity extends Activity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_my);
 
-    WebView webView = (WebView) findViewById(R.id.web_view);
-    webView.getSettings().setJavaScriptEnabled(true);
+    Button button = (Button) findViewById(android.R.id.button1);
 
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-      WebView.setWebContentsDebuggingEnabled(true); // for appium
-    }
-
-    String html = "<html>" +
-        "<body>" +
-        "<h1>Yo, this is like the simplest web page ever</h1>" +
-        "<pre style='width: 100%' id='display'></pre>" +
-        "<textarea style='width: 100%; height: 300px;' class='my-text-area' placeholder='Enter some text here'></textarea>" +
-        "<script>" +
-        "document.addEventListener('DOMContentLoaded', function () {" +
-        "var count = 0; " +
-        "setInterval(function () {" +
-        "document.getElementById('display').innerHTML = 'Running for ' + (++count) + ' seconds';" +
-        "}, 1000);" +
-        "});" +
-        "</script>" +
-        "</body>" +
-        "</html>";
-
-    webView.loadDataWithBaseURL("http://fake.com", html, "text/html", "utf-8", null);
+    button.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent = new Intent(MyActivity.this, WebViewActivity.class);
+        startActivity(intent);
+      }
+    });
   }
 
 

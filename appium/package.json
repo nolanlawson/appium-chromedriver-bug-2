@@ -6,13 +6,14 @@
   "scripts": {
     "test": "npm run jshint && ./bin/test.sh",
     "test-appium": "node test/test.js",
-    "jshint": "jshint -c .jshintrc test/*js"
+    "jshint": "jshint -c .jshintrc test/*js",
+    "postinstall": "./bin/fix-chromedriver.sh"
   },
   "author": "",
   "license": "ISC",
   "private": true,
   "devDependencies": {
-    "appium": "^1.2.4",
+    "appium": "^1.3.4",
     "bluebird": "^2.3.5",
     "chai": "^1.9.2",
     "chai-as-promised": "^4.1.1",
