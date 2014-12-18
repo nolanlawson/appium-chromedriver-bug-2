@@ -21,6 +21,9 @@ public class WebViewFragment extends Fragment {
 
     View rootView = inflater.inflate(R.layout.fragment_web_view, container, false);
 
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+      WebView.setWebContentsDebuggingEnabled(true);
+    }
 
     final WebView webView = (WebView) rootView.findViewById(R.id.web_view);
     WebSettings settings = webView.getSettings();
