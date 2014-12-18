@@ -7,7 +7,7 @@ function test(browser, driver) {
     .sleep(5000)
     .elementById('android:id/button1')
     .click()
-    .sleep(7000)
+    .sleep(10000)
     .contexts()
     .then(function (ctxs) {
       console.log(ctxs);
