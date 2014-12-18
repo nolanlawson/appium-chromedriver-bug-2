@@ -21,7 +21,7 @@ function test(browser, driver) {
       })[0];
       return driver.context(newContext);
     })
-    .elementByCssSelector('.sqs-title-editable')
+    .elementByCssSelector('.my-textarea')
     .sendKeys('yo I am totally entering some text')
     .sleep(5000)
     .contexts()

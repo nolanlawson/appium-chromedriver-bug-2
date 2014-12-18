@@ -63,7 +63,7 @@ public class WebViewFragment extends Fragment {
       @Override
       protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
-        webView.loadUrl("file:///android_asset/layoutengine/index.html");
+        webView.loadUrl("file:///android_asset/index.html");
       }
     }.execute((Void)null);
 

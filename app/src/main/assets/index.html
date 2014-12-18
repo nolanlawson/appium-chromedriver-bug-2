@@ -1,0 +1,14 @@
+<html>
+<body>
+  <h1>Yo, this is like the simplest web page ever</h1>
+  <pre style='width: 100%' id='display'></pre>
+  <textarea style='width: 100%; height: 300px;' class='my-text-area' placeholder='Enter some text here'></textarea>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var count = 0; setInterval(function () {
+      document.getElementById('display').innerHTML = 'Running for ' + (++count) + ' seconds';
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
